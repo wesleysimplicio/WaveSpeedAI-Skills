@@ -1,0 +1,14 @@
+{
+  "ignorePatterns": [
+    { "pattern": "^http://localhost" },
+    { "pattern": "^http://127.0.0.1" },
+    { "pattern": "^https://api.wavespeed.ai" },
+    { "pattern": "^https://llm.wavespeed.ai" },
+    { "pattern": "^https://wavespeed-cdn" }
+  ],
+  "timeout": "20s",
+  "retryOn429": true,
+  "retryCount": 2,
+  "fallbackRetryDelay": "30s",
+  "aliveStatusCodes": [200, 206, 301, 302, 308, 403, 429]
+}

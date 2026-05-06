@@ -1,0 +1,37 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  install-smoke:
+    name: install smoke (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run installer (generic agent only)
+        run: bash install.sh --yes --agents generic
+      - name: Verify CLI is importable
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          which wavespeed-cli
+          wavespeed-cli --help
+      - name: Verify webhook signature helper (no API key required)
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          export WAVESPEED_WEBHOOK_SECRET="ws_test_secret"
+          BODY='{"id":"pred_x","status":"completed"}'
+          SIG=$(python3 -c "import hmac, hashlib, os; print(hmac.new(os.environ['WAVESPEED_WEBHOOK_SECRET'].encode(), b'$BODY', hashlib.sha256).hexdigest())")
+          wavespeed-cli verify-webhook "$BODY" "$SIG"

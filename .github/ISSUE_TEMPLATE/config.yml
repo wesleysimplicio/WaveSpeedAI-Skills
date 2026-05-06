@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: WaveSpeedAI platform issues
+    url: https://wavespeed.ai/contact
+    about: Problems with the API itself, billing, account access, model availability — file with WaveSpeedAI directly. This repo is community-maintained skill files, not the platform.
+  - name: Discussions
+    url: https://github.com/wesleysimplicio/WaveSpeedAI-Skills/discussions
+    about: Questions, ideas, "should I add X?" — start a discussion before opening an issue.
