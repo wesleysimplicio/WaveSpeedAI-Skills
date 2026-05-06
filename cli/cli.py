@@ -29,6 +29,7 @@ Example
         "$(jq -nc --arg u "$URL" '{image:$u, prompt:"camera dolly in"}')"
     wavespeed-cli llm anthropic/claude-opus-4.6 "Hello"
 """
+
 from __future__ import annotations
 
 import argparse
@@ -44,6 +45,7 @@ import requests
 
 try:  # SDK is optional for some commands.
     import wavespeed
+
     _HAS_SDK = True
 except ImportError:  # pragma: no cover
     wavespeed = None  # type: ignore[assignment]
@@ -51,10 +53,18 @@ except ImportError:  # pragma: no cover
 
 API_BASE = os.environ.get("WAVESPEED_API_BASE", "https://api.wavespeed.ai/api/v3").rstrip("/")
 LLM_BASE = os.environ.get("WAVESPEED_LLM_BASE", "https://llm.wavespeed.ai/v1").rstrip("/")
-TERMINAL_STATUSES = {"completed", "failed", "canceled", "cancelled", "succeeded", "error"}
+TERMINAL_STATUSES = {
+    "completed",
+    "failed",
+    "canceled",
+    "cancelled",
+    "succeeded",
+    "error",
+}
 
 
 # ----- helpers ---------------------------------------------------------------
+
 
 def _key() -> str:
     key = os.environ.get("WAVESPEED_API_KEY", "").strip()
@@ -89,6 +99,7 @@ def _require_sdk() -> None:
 
 
 # ----- commands --------------------------------------------------------------
+
 
 def cmd_run(args: argparse.Namespace) -> int:
     _require_sdk()
@@ -273,9 +284,13 @@ def cmd_verify_webhook(args: argparse.Namespace) -> int:
 
 # ----- argparse --------------------------------------------------------------
 
+
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(prog="wavespeed-cli", description=__doc__,
-                                formatter_class=argparse.RawDescriptionHelpFormatter)
+    p = argparse.ArgumentParser(
+        prog="wavespeed-cli",
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p.add_argument("--version", action="version", version="wavespeed-cli 1.0.0")
     sub = p.add_subparsers(dest="cmd", required=True)
 
@@ -329,7 +344,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     pv = sub.add_parser("verify-webhook", help="verify HMAC-SHA256 webhook signature")
     pv.add_argument("body", help='raw body string, or "-" to read from stdin')
-    pv.add_argument("signature", help='value of the X-Webhook-Signature header')
+    pv.add_argument("signature", help="value of the X-Webhook-Signature header")
     pv.set_defaults(func=cmd_verify_webhook)
 
     return p
