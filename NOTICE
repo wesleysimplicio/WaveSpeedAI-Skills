@@ -1,0 +1,14 @@
+WaveSpeedAI-Skills
+Copyright (c) 2026 Wesley Simplicio and contributors
+
+This project is a community-maintained collection of agent skills targeting
+the WaveSpeedAI inference platform (https://wavespeed.ai). It is not
+affiliated with, endorsed by, or sponsored by WaveSpeedAI Inc. Trademarks,
+model names, and product names referenced in this repository belong to their
+respective owners and are used here for descriptive purposes only.
+
+Third-party components used at runtime:
+
+- wavespeed (Python SDK) — published by WaveSpeedAI under its own license terms.
+  See https://github.com/WaveSpeedAI/wavespeed-python.
+- requests — Apache License 2.0.
