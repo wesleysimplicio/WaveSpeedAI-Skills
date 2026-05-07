@@ -4,6 +4,19 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-05-07
+
+### Added
+- Adopted `agentic-starter` scaffold: `AGENTS.md`, `CLAUDE.md`, `.specs/{product,architecture,workflow,sprints}/`, `.skills/`, `.claude/{settings.json,hooks/}`, `.codex/config.toml`, `.github/{workflows/dod.yml,PULL_REQUEST_TEMPLATE.md,ISSUE_TEMPLATE/,copilot-instructions.md}`, `playwright.config.ts`, `presentation/`.
+- `VERSION` file (pyproject.toml has no `[project]` block).
+- `.specs/product/{VISION,DOMAIN,PERSONAS}.md` mapped to Skill, Task (Prediction), Upload, LlmCompletion, WebhookEvent.
+- `.specs/architecture/{DESIGN,PATTERNS}.md` aligned with bash CLI + Python helper stack.
+- `.specs/sprints/BACKLOG.md` from real TODOs.
+
+### Changed
+- Bump VERSION 1.0.0 -> 1.1.0 (minor: structure added).
+- `AGENTS.md`/`CLAUDE.md`/`.github/copilot-instructions.md` aligned with real stack.
+
 ## [1.0.0] - 2026-05-06
 
 ### Added
