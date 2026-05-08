@@ -4,6 +4,16 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-05-08
+
+### Added
+- `pyproject.toml` `[project]` table with setuptools build-system, name `wavespeedai-skills`, console-script `wavespeed-cli` resolving to `wavespeedai_skills.cli:main`, runtime dep `wavespeed>=1.0.8`.
+- `cli/__init__.py` (empty) so setuptools recognizes `cli/` as a Python package, mapped to import name `wavespeedai_skills` via `[tool.setuptools.package-dir]`.
+- Distributed as a Python package on PyPI (`pip install wavespeedai-skills`).
+
+### Changed
+- Bump VERSION 1.1.0 -> 1.2.0 (minor: PyPI distribution added).
+
 ## [1.1.0] - 2026-05-07
 
 ### Added
