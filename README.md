@@ -1,5 +1,8 @@
 # WaveSpeedAI Skills for Claude, Codex, Hermes, OpenClaw, Others
 
+> 🇺🇸 English. Leia em português: [README.pt-BR.md](README.pt-BR.md).
+
+
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Skill Spec](https://img.shields.io/badge/spec-agentskills.io-555.svg)](https://agentskills.io)
 [![WaveSpeedAI](https://img.shields.io/badge/platform-WaveSpeedAI-7c3aed.svg)](https://wavespeed.ai)
