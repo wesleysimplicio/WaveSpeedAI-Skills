@@ -28,6 +28,8 @@ https://github.com/wesleysimplicio/WaveSpeedAI-Skills/raw/main/docs/media/tutori
 
 > O código-fonte do vídeo fica em [`remotion-tutorial/`](remotion-tutorial/) — puro [Remotion](https://www.remotion.dev/) (TypeScript + React), sem assets externos. Re-renderize com `cd remotion-tutorial && npm install && npm run build`.
 
+> Stills de regressão por cena: [`docs/media/scenes/`](docs/media/scenes/).
+
 ```bash
 # Instalação one-line (interativo, escolhe os agentes que você tem)
 bash <(curl -fsSL https://raw.githubusercontent.com/wesleysimplicio/WaveSpeedAI-Skills/main/install.sh)

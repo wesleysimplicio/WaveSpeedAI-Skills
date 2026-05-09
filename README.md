@@ -29,6 +29,8 @@ https://github.com/wesleysimplicio/WaveSpeedAI-Skills/raw/main/docs/media/tutori
 
 > Source code for the video lives in [`remotion-tutorial/`](remotion-tutorial/) — pure [Remotion](https://www.remotion.dev/) (TypeScript + React), no external assets. Re-render with `cd remotion-tutorial && npm install && npm run build`.
 
+> Per-scene regression stills: [`docs/media/scenes/`](docs/media/scenes/).
+
 ```bash
 # One-line install (interactive, picks the agents you have)
 bash <(curl -fsSL https://raw.githubusercontent.com/wesleysimplicio/WaveSpeedAI-Skills/main/install.sh)
