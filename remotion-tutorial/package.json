@@ -1,0 +1,26 @@
+{
+  "name": "wavespeedai-skill-remotion-tutorial",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Animated Remotion video that explains how to install and use the WaveSpeedAI Skill across agent hosts.",
+  "type": "module",
+  "scripts": {
+    "dev": "remotion studio",
+    "studio": "remotion studio",
+    "build": "remotion render WaveSpeedSkillTutorial out/wavespeed-skill-tutorial.mp4",
+    "build:webm": "remotion render WaveSpeedSkillTutorial out/wavespeed-skill-tutorial.webm --codec=vp9",
+    "still": "remotion still WaveSpeedSkillTutorial out/preview.png --frame=90",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.366",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "remotion": "4.0.366"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.0",
+    "@types/react-dom": "19.0.0",
+    "typescript": "5.6.3"
+  }
+}
