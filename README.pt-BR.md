@@ -13,22 +13,65 @@
 
 <p align="center">
   <a href="docs/media/tutorial.mp4">
-    <img src="docs/media/tutorial-poster.png" alt="WaveSpeedAI Skill — tutorial animado" width="820" />
+    <img src="docs/media/tutorial-poster.png" alt="WaveSpeedAI Skill — tutorial animado" width="900" />
   </a>
-  <br/>
-  <em>▶ Clique para tocar · 60 s · 1080p · <a href="docs/media/tutorial.mp4">MP4</a> · <a href="docs/media/tutorial.webm">WebM</a></em>
+</p>
+
+<p align="center">
+  <strong>▶ <a href="docs/media/tutorial.mp4">Assista ao MP4 de 60 s</a></strong> &nbsp;·&nbsp;
+  <a href="docs/media/tutorial.webm">WebM (VP9)</a> &nbsp;·&nbsp;
+  1920×1080 · 30 fps
 </p>
 
 <details>
-<summary>Player inline (autoplay no GitHub)</summary>
+<summary><strong>Tocar inline no GitHub (vídeo embedado)</strong></summary>
 
 https://github.com/wesleysimplicio/WaveSpeedAI-Skills/raw/main/docs/media/tutorial.mp4
 
 </details>
 
-> O código-fonte do vídeo fica em [`remotion-tutorial/`](remotion-tutorial/) — puro [Remotion](https://www.remotion.dev/) (TypeScript + React), sem assets externos. Re-renderize com `cd remotion-tutorial && npm install && npm run build`.
+### Storyboard — cena por cena
 
-> Stills de regressão por cena: [`docs/media/scenes/`](docs/media/scenes/).
+O tutorial é uma composição Remotion de 7 cenas. Cada still abaixo é um frame do meio da cena, depois das animações de entrada estabilizarem.
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="docs/media/scenes/01-intro.png" alt="Cena 1 — Intro" width="100%" /><br/>
+      <sub><strong>1 · Intro</strong> — 5,0 s · logo, título, chips de hosts, pulse de waveform</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="docs/media/scenes/02-what.png" alt="Cena 2 — O que é a skill" width="100%" /><br/>
+      <sub><strong>2 · O que é a skill</strong> — 9,0 s · 700+ mídia · 290+ LLMs · uma CLI</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="docs/media/scenes/03-install.png" alt="Cena 3 — Instalação" width="100%" /><br/>
+      <sub><strong>3 · Instalação</strong> — 10,0 s · terminal animado + checklist do instalador</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <img src="docs/media/scenes/04-hosts.png" alt="Cena 4 — Hosts" width="100%" /><br/>
+      <sub><strong>4 · Hosts suportados</strong> — 8,0 s · grid de 7 hosts + paths SKILL.md</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="docs/media/scenes/05-cli.png" alt="Cena 5 — CLI" width="100%" /><br/>
+      <sub><strong>5 · CLI em ação</strong> — 12,0 s · wavespeed-cli typing demo</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="docs/media/scenes/06-examples.png" alt="Cena 6 — Exemplos" width="100%" /><br/>
+      <sub><strong>6 · Exemplos</strong> — 10,0 s · imagem · vídeo · LLM previews</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="3" width="100%">
+      <img src="docs/media/scenes/07-outro.png" alt="Cena 7 — Outro" width="60%" /><br/>
+      <sub><strong>7 · Outro / CTA</strong> — 6,0 s · install one-line + repo + licença</sub>
+    </td>
+  </tr>
+</table>
+
+> O código-fonte do vídeo fica em [`remotion-tutorial/`](remotion-tutorial/) — puro [Remotion](https://www.remotion.dev/) (TypeScript + React), sem assets externos. Re-renderize com `cd remotion-tutorial && npm install && npm run build`. Stills em maior resolução em [`docs/media/scenes/`](docs/media/scenes/).
 
 ```bash
 # Instalação one-line (interativo, escolhe os agentes que você tem)
