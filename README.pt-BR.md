@@ -9,6 +9,25 @@
 
 > Uma instalação. Todo agente. Plataforma WaveSpeedAI completa — 700+ modelos de mídia e 290+ LLMs compatíveis com OpenAI — conectada em Claude Code, Codex, Hermes Agent, OpenClaw, Cursor, Windsurf e qualquer host que siga a spec [agentskills.io](https://agentskills.io) `SKILL.md`.
 
+## Tour de 60 segundos
+
+<p align="center">
+  <a href="docs/media/tutorial.mp4">
+    <img src="docs/media/tutorial-poster.png" alt="WaveSpeedAI Skill — tutorial animado" width="820" />
+  </a>
+  <br/>
+  <em>▶ Clique para tocar · 60 s · 1080p · <a href="docs/media/tutorial.mp4">MP4</a> · <a href="docs/media/tutorial.webm">WebM</a></em>
+</p>
+
+<details>
+<summary>Player inline (autoplay no GitHub)</summary>
+
+https://github.com/wesleysimplicio/WaveSpeedAI-Skills/raw/main/docs/media/tutorial.mp4
+
+</details>
+
+> O código-fonte do vídeo fica em [`remotion-tutorial/`](remotion-tutorial/) — puro [Remotion](https://www.remotion.dev/) (TypeScript + React), sem assets externos. Re-renderize com `cd remotion-tutorial && npm install && npm run build`.
+
 ```bash
 # Instalação one-line (interativo, escolhe os agentes que você tem)
 bash <(curl -fsSL https://raw.githubusercontent.com/wesleysimplicio/WaveSpeedAI-Skills/main/install.sh)

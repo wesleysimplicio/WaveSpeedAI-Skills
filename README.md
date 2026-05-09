@@ -10,6 +10,25 @@
 
 > One install. Every agent. Full WaveSpeedAI inference platform — 700+ media models and 290+ OpenAI-compatible LLMs — wired into Claude Code, Codex, Hermes Agent, OpenClaw, Cursor, Windsurf, and any other host that follows the [agentskills.io](https://agentskills.io) `SKILL.md` spec.
 
+## 60-second tour
+
+<p align="center">
+  <a href="docs/media/tutorial.mp4">
+    <img src="docs/media/tutorial-poster.png" alt="WaveSpeedAI Skill — animated tutorial" width="820" />
+  </a>
+  <br/>
+  <em>▶ Click to play · 60 s · 1080p · <a href="docs/media/tutorial.mp4">MP4</a> · <a href="docs/media/tutorial.webm">WebM</a></em>
+</p>
+
+<details>
+<summary>Inline player (autoplay on GitHub)</summary>
+
+https://github.com/wesleysimplicio/WaveSpeedAI-Skills/raw/main/docs/media/tutorial.mp4
+
+</details>
+
+> Source code for the video lives in [`remotion-tutorial/`](remotion-tutorial/) — pure [Remotion](https://www.remotion.dev/) (TypeScript + React), no external assets. Re-render with `cd remotion-tutorial && npm install && npm run build`.
+
 ```bash
 # One-line install (interactive, picks the agents you have)
 bash <(curl -fsSL https://raw.githubusercontent.com/wesleysimplicio/WaveSpeedAI-Skills/main/install.sh)
