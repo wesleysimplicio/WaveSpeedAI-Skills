@@ -47,3 +47,4 @@ htmlcov/
 *.mp3
 !references/**/*.png
 !examples/**/*.png
+!docs/media/**
