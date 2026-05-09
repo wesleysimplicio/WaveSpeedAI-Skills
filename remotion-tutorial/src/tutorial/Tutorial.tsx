@@ -9,6 +9,7 @@ import { SceneCli } from './scenes/SceneCli';
 import { SceneExamples } from './scenes/SceneExamples';
 import { SceneOutro } from './scenes/SceneOutro';
 import { colors } from './theme';
+import { LocaleContext, type Locale } from './i18n';
 
 const SCENE_COMPONENTS: Record<string, React.FC> = {
   intro: SceneIntro,
@@ -20,25 +21,31 @@ const SCENE_COMPONENTS: Record<string, React.FC> = {
   outro: SceneOutro,
 };
 
-export const Tutorial: React.FC = () => {
+export type TutorialProps = {
+  locale?: Locale;
+};
+
+export const Tutorial: React.FC<TutorialProps> = ({ locale = 'pt-BR' }) => {
   let cursor = 0;
   return (
-    <AbsoluteFill style={{ backgroundColor: colors.bgDeep }}>
-      {SCENES.map((scene) => {
-        const Component = SCENE_COMPONENTS[scene.id];
-        const from = cursor;
-        cursor += scene.durationInFrames;
-        return (
-          <Sequence
-            key={scene.id}
-            from={from}
-            durationInFrames={scene.durationInFrames}
-            name={scene.id}
-          >
-            <Component />
-          </Sequence>
-        );
-      })}
-    </AbsoluteFill>
+    <LocaleContext.Provider value={locale}>
+      <AbsoluteFill style={{ backgroundColor: colors.bgDeep }}>
+        {SCENES.map((scene) => {
+          const Component = SCENE_COMPONENTS[scene.id];
+          const from = cursor;
+          cursor += scene.durationInFrames;
+          return (
+            <Sequence
+              key={scene.id}
+              from={from}
+              durationInFrames={scene.durationInFrames}
+              name={scene.id}
+            >
+              <Component />
+            </Sequence>
+          );
+        })}
+      </AbsoluteFill>
+    </LocaleContext.Provider>
   );
 };

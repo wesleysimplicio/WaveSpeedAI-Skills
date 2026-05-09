@@ -10,57 +10,35 @@ import { SceneFrame } from '../components/SceneFrame';
 import { SceneTitle } from '../components/SceneTitle';
 import { CodeBlock } from '../components/CodeBlock';
 import { fonts, colors } from '../theme';
+import { useStrings } from '../i18n';
 
-const COMMAND_CARDS = [
-  {
-    label: 'models',
-    description: 'Lista o catálogo vivo de 700+ modelos.',
-    color: colors.violetSoft,
-  },
-  {
-    label: 'run',
-    description: 'Roda inferência async com polling automático.',
-    color: colors.cyan,
-  },
-  {
-    label: 'submit',
-    description: 'Fire-and-forget com webhook de callback.',
-    color: colors.amber,
-  },
-  {
-    label: 'upload',
-    description: 'Manda arquivo local e devolve URL hospedada.',
-    color: colors.emerald,
-  },
-  {
-    label: 'llm',
-    description: 'Chat OpenAI-compatible para Claude, GPT, Gemini.',
-    color: colors.rose,
-  },
-  {
-    label: 'verify-webhook',
-    description: 'Valida HMAC-SHA256 do callback do WaveSpeed.',
-    color: colors.pink,
-  },
+const CARD_COLORS = [
+  colors.violetSoft,
+  colors.cyan,
+  colors.amber,
+  colors.emerald,
+  colors.rose,
+  colors.pink,
 ];
 
 export const SceneCli: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const t = useStrings().cli;
 
   return (
-    <SceneFrame accent="violet" particleSeed="cli" badge="05 · CLI EM AÇÃO">
+    <SceneFrame accent="violet" particleSeed="cli" badge={t.badge}>
       <AbsoluteFill style={{ padding: '110px 96px 90px', display: 'flex', flexDirection: 'column', gap: 50 }}>
         <SceneTitle
-          eyebrow="Como o agent invoca a skill"
-          title="wavespeed-cli — superfície única, contratos previsíveis"
-          subtitle="Comandos curtos, JSON nas saídas. O agent gera, espera e devolve URLs prontas."
+          eyebrow={t.eyebrow}
+          title={t.title}
+          subtitle={t.subtitle}
           accent={colors.violetSoft}
         />
 
         <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 56, alignItems: 'flex-start' }}>
           <CodeBlock
-            title="terminal — text→image (Z-Image turbo)"
+            title={t.codeTitle}
             startFrame={20}
             width="100%"
             lineDuration={28}
@@ -88,7 +66,7 @@ export const SceneCli: React.FC = () => {
               gap: 16,
             }}
           >
-            {COMMAND_CARDS.map((cmd, i) => {
+            {t.cards.map((cmd, i) => {
               const enterFrame = 90 + i * 14;
               const local = frame - enterFrame;
               const enter = spring({
@@ -98,6 +76,7 @@ export const SceneCli: React.FC = () => {
               });
               const translate = interpolate(enter, [0, 1], [18, 0]);
               const scale = interpolate(enter, [0, 1], [0.92, 1]);
+              const cardColor = CARD_COLORS[i % CARD_COLORS.length];
               return (
                 <div
                   key={cmd.label}
@@ -107,7 +86,7 @@ export const SceneCli: React.FC = () => {
                     padding: '18px 20px',
                     borderRadius: 16,
                     background: colors.surface,
-                    border: `1px solid ${cmd.color}44`,
+                    border: `1px solid ${cardColor}44`,
                     boxShadow: `0 14px 36px -22px rgba(8,8,30,0.85)`,
                     backdropFilter: 'blur(18px)',
                     display: 'flex',
@@ -119,7 +98,7 @@ export const SceneCli: React.FC = () => {
                   <div
                     style={{
                       fontFamily: fonts.mono,
-                      color: cmd.color,
+                      color: cardColor,
                       fontSize: 18,
                       fontWeight: 700,
                     }}

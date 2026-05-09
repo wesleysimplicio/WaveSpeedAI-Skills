@@ -4,6 +4,7 @@ import { SceneFrame } from '../components/SceneFrame';
 import { SceneTitle } from '../components/SceneTitle';
 import { HostBadge } from '../components/HostBadge';
 import { colors } from '../theme';
+import { useStrings } from '../i18n';
 
 const HOSTS = [
   { name: 'Claude Code', monogram: 'C', path: '~/.claude/skills/wavespeed/SKILL.md', color: colors.violetSoft },
@@ -16,13 +17,14 @@ const HOSTS = [
 ];
 
 export const SceneHosts: React.FC = () => {
+  const t = useStrings().hosts;
   return (
-    <SceneFrame accent="amber" particleSeed="hosts" badge="04 · ONDE FUNCIONA">
+    <SceneFrame accent="amber" particleSeed="hosts" badge={t.badge}>
       <AbsoluteFill style={{ padding: '110px 96px 90px', display: 'flex', flexDirection: 'column', gap: 52 }}>
         <SceneTitle
-          eyebrow="Mesma skill, todos os agents"
-          title="Sete hosts suportados — frontmatter por host"
-          subtitle="O instalador escolhe o SKILL.md certo para cada diretório de agent. Você só roda uma vez."
+          eyebrow={t.eyebrow}
+          title={t.title}
+          subtitle={t.subtitle}
           accent={colors.amber}
         />
 

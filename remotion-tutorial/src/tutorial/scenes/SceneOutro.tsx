@@ -9,10 +9,14 @@ import {
 import { SceneFrame } from '../components/SceneFrame';
 import { Logo } from '../components/Logo';
 import { fonts, colors, gradients } from '../theme';
+import { useStrings } from '../i18n';
+
+const PILL_COLORS = [colors.violetSoft, colors.cyan, colors.amber];
 
 export const SceneOutro: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const t = useStrings().outro;
 
   const titleSpring = spring({
     frame: frame - 8,
@@ -31,7 +35,7 @@ export const SceneOutro: React.FC = () => {
   });
 
   return (
-    <SceneFrame accent="violet" particleSeed="outro" badge="07 · COMECE AGORA">
+    <SceneFrame accent="violet" particleSeed="outro" badge={t.badge}>
       <AbsoluteFill
         style={{
           padding: '110px 96px 90px',
@@ -58,7 +62,7 @@ export const SceneOutro: React.FC = () => {
             fontFamily: fonts.sans,
           }}
         >
-          Instale agora — uma linha
+          {t.title}
         </h1>
 
         <div
@@ -95,9 +99,9 @@ export const SceneOutro: React.FC = () => {
             alignItems: 'center',
           }}
         >
-          <Pill label="github.com/wesleysimplicio/WaveSpeedAI-Skills" color={colors.violetSoft} />
-          <Pill label="MIT licensed" color={colors.cyan} />
-          <Pill label="agentskills.io spec" color={colors.amber} />
+          {t.pills.map((label, i) => (
+            <Pill key={label} label={label} color={PILL_COLORS[i % PILL_COLORS.length]} />
+          ))}
         </div>
 
         <p
@@ -110,7 +114,7 @@ export const SceneOutro: React.FC = () => {
             letterSpacing: 0.4,
           }}
         >
-          One install. Every agent. Full WaveSpeedAI inference platform.
+          {t.footer}
         </p>
       </AbsoluteFill>
     </SceneFrame>

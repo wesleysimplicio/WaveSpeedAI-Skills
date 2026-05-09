@@ -4,15 +4,17 @@ import { SceneFrame } from '../components/SceneFrame';
 import { SceneTitle } from '../components/SceneTitle';
 import { Card } from '../components/Card';
 import { colors } from '../theme';
+import { useStrings } from '../i18n';
 
 export const SceneWhatIsSkill: React.FC = () => {
+  const t = useStrings().whatIs;
   return (
-    <SceneFrame accent="violet" particleSeed="what" badge="02 · O QUE É">
+    <SceneFrame accent="violet" particleSeed="what" badge={t.badge}>
       <AbsoluteFill style={{ padding: '110px 96px 90px', display: 'flex', flexDirection: 'column', gap: 60 }}>
         <SceneTitle
-          eyebrow="A skill em uma frase"
-          title="Um manual que ensina o agent a chamar a WaveSpeedAI"
-          subtitle="O arquivo SKILL.md vira capacidade nativa do seu agent — texto curto, frontmatter padronizado, comandos prontos."
+          eyebrow={t.eyebrow}
+          title={t.title}
+          subtitle={t.subtitle}
           accent={colors.violetSoft}
         />
 
@@ -28,14 +30,8 @@ export const SceneWhatIsSkill: React.FC = () => {
             delay={0}
             accent={colors.violet}
             icon={<MediaIcon />}
-            title="700+ modelos de mídia"
-            description={
-              <>
-                Z-Image, FLUX, Seedance, Kling, Veo, Luma, Wan, Qwen,
-                Higgsfield, ace-step. Imagem, vídeo, áudio e avatares — tudo
-                pelo mesmo gateway.
-              </>
-            }
+            title={t.cards.media.title}
+            description={t.cards.media.description}
             footer="wavespeed-ai/*"
             width="100%"
           />
@@ -44,13 +40,8 @@ export const SceneWhatIsSkill: React.FC = () => {
             delay={12}
             accent={colors.cyan}
             icon={<ChatIcon />}
-            title="290+ LLMs OpenAI-compatible"
-            description={
-              <>
-                Claude, GPT, Gemini, DeepSeek, Llama, Mistral, Qwen, xAI.
-                Mesma chave, mesma assinatura, sem trocar SDK por provedor.
-              </>
-            }
+            title={t.cards.llm.title}
+            description={t.cards.llm.description}
             footer="https://llm.wavespeed.ai/v1"
             width="100%"
           />
@@ -59,13 +50,8 @@ export const SceneWhatIsSkill: React.FC = () => {
             delay={24}
             accent={colors.amber}
             icon={<TerminalIcon />}
-            title="Uma CLI, qualquer agent"
-            description={
-              <>
-                A skill empacota um shell único: <code>wavespeed-cli</code>.
-                Async + polling automático, upload, webhooks, batch jobs.
-              </>
-            }
+            title={t.cards.cli.title}
+            description={t.cards.cli.description}
             footer="~/.local/bin/wavespeed-cli"
             width="100%"
           />

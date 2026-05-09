@@ -4,15 +4,17 @@ import { SceneFrame } from '../components/SceneFrame';
 import { SceneTitle } from '../components/SceneTitle';
 import { MediaPreview } from '../components/MediaPreview';
 import { colors } from '../theme';
+import { useStrings } from '../i18n';
 
 export const SceneExamples: React.FC = () => {
+  const t = useStrings().examples;
   return (
-    <SceneFrame accent="cyan" particleSeed="examples" badge="06 · O QUE DÁ PRA FAZER">
+    <SceneFrame accent="cyan" particleSeed="examples" badge={t.badge}>
       <AbsoluteFill style={{ padding: '110px 96px 90px', display: 'flex', flexDirection: 'column', gap: 50 }}>
         <SceneTitle
-          eyebrow="Three modalities, one CLI"
-          title="Imagem, vídeo e LLM com o mesmo padrão de chamada"
-          subtitle="Async por padrão. URLs prontas em outputs[0]. Webhooks opcionais para fila longa."
+          eyebrow={t.eyebrow}
+          title={t.title}
+          subtitle={t.subtitle}
           accent={colors.cyanSoft}
         />
 
@@ -32,8 +34,8 @@ export const SceneExamples: React.FC = () => {
             width={460}
             height={300}
             modelId="wavespeed-ai/z-image/turbo"
-            label="Text → Image"
-            prompt="cat astronaut, neon cyberpunk"
+            label={t.items.image.label}
+            prompt={t.items.image.prompt}
           />
           <MediaPreview
             variant="video"
@@ -42,8 +44,8 @@ export const SceneExamples: React.FC = () => {
             width={460}
             height={300}
             modelId="wavespeed-ai/seedance-v2"
-            label="Image → Video"
-            prompt="camera dolly in, soft lights"
+            label={t.items.video.label}
+            prompt={t.items.video.prompt}
           />
           <MediaPreview
             variant="llm"
@@ -52,8 +54,8 @@ export const SceneExamples: React.FC = () => {
             width={460}
             height={300}
             modelId="anthropic/claude-opus-4.6"
-            label="Chat → LLM"
-            prompt="resume em uma frase"
+            label={t.items.llm.label}
+            prompt={t.items.llm.prompt}
           />
         </div>
       </AbsoluteFill>

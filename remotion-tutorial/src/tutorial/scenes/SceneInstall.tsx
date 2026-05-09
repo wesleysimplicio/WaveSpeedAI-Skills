@@ -10,25 +10,20 @@ import { SceneFrame } from '../components/SceneFrame';
 import { SceneTitle } from '../components/SceneTitle';
 import { CodeBlock } from '../components/CodeBlock';
 import { fonts, colors } from '../theme';
-
-const STEPS = [
-  { label: 'Provisiona venv isolado', detail: '~/.local/share/wavespeed-skill/venv' },
-  { label: 'Instala SDK Python', detail: 'pip install wavespeed requests' },
-  { label: 'Dropa a CLI', detail: '~/.local/bin/wavespeed-cli' },
-  { label: 'Detecta agents e copia o SKILL.md', detail: 'claude · codex · hermes · cursor · windsurf · openclaw' },
-];
+import { useStrings } from '../i18n';
 
 export const SceneInstall: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const t = useStrings().install;
 
   return (
-    <SceneFrame accent="cyan" particleSeed="install" badge="03 · INSTALAÇÃO">
+    <SceneFrame accent="cyan" particleSeed="install" badge={t.badge}>
       <AbsoluteFill style={{ padding: '110px 96px 90px', display: 'flex', flexDirection: 'column', gap: 50 }}>
         <SceneTitle
-          eyebrow="Setup em uma linha"
-          title="curl, instala, configura — e já tem agent + CLI"
-          subtitle="O instalador detecta quais agents você usa e só copia o SKILL.md onde faz sentido."
+          eyebrow={t.eyebrow}
+          title={t.title}
+          subtitle={t.subtitle}
           accent={colors.cyanSoft}
         />
 
@@ -41,21 +36,21 @@ export const SceneInstall: React.FC = () => {
             charsPerFrame={1.6}
             topAccent={colors.cyan}
             lines={[
-              { text: '# install em qualquer host conhecido', comment: true },
+              { text: t.code.commentInstall, comment: true },
               { prompt: '$', text: 'bash <(curl -fsSL https://wavespeed.ai/install.sh)' },
               { text: '' },
-              { text: '# ou clonado localmente', comment: true },
+              { text: t.code.commentClone, comment: true },
               { prompt: '$', text: 'git clone https://github.com/wesleysimplicio/WaveSpeedAI-Skills' },
               { prompt: '$', text: 'bash install.sh --yes' },
               { text: '' },
-              { text: '# autentica e valida', comment: true },
+              { text: t.code.commentAuth, comment: true },
               { prompt: '$', text: 'export WAVESPEED_API_KEY="ws_..."' },
               { prompt: '$', text: 'wavespeed-cli balance' },
             ]}
           />
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-            {STEPS.map((step, i) => {
+            {t.steps.map((step, i) => {
               const enterFrame = 80 + i * 26;
               const local = frame - enterFrame;
               const enter = spring({

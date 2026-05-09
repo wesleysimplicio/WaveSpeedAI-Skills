@@ -9,7 +9,10 @@
     "studio": "remotion studio",
     "build": "remotion render WaveSpeedSkillTutorial out/wavespeed-skill-tutorial.mp4",
     "build:webm": "remotion render WaveSpeedSkillTutorial out/wavespeed-skill-tutorial.webm --codec=vp9",
+    "build:en": "remotion render WaveSpeedSkillTutorialEN out/wavespeed-skill-tutorial-en.mp4",
+    "build:en:webm": "remotion render WaveSpeedSkillTutorialEN out/wavespeed-skill-tutorial-en.webm --codec=vp9",
     "still": "remotion still WaveSpeedSkillTutorial out/preview.png --frame=90",
+    "still:en": "remotion still WaveSpeedSkillTutorialEN out/preview-en.png --frame=90",
     "lint": "tsc --noEmit"
   },
   "dependencies": {

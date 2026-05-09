@@ -13,21 +13,20 @@
 ## 60-second tour
 
 <p align="center">
-  <a href="docs/media/tutorial.mp4">
-    <img src="docs/media/tutorial-poster.png" alt="WaveSpeedAI Skill — animated tutorial" width="900" />
+  <a href="docs/media/tutorial-en.mp4">
+    <img src="docs/media/tutorial-poster-en.png" alt="WaveSpeedAI Skill — animated tutorial" width="900" />
   </a>
 </p>
 
 <p align="center">
-  <strong>▶ <a href="docs/media/tutorial.mp4">Watch the 60s MP4</a></strong> &nbsp;·&nbsp;
-  <a href="docs/media/tutorial.webm">WebM (VP9)</a> &nbsp;·&nbsp;
+  <strong>▶ <a href="docs/media/tutorial-en.mp4">Watch the 60s MP4</a></strong> &nbsp;·&nbsp;
   1920×1080 · 30 fps
 </p>
 
 <details>
 <summary><strong>Play inline on GitHub (auto-embedded video)</strong></summary>
 
-https://github.com/wesleysimplicio/WaveSpeedAI-Skills/raw/main/docs/media/tutorial.mp4
+https://github.com/wesleysimplicio/WaveSpeedAI-Skills/raw/main/docs/media/tutorial-en.mp4
 
 </details>
 
@@ -38,41 +37,41 @@ The tutorial is a 7-scene Remotion composition. Each still below is a frame from
 <table>
   <tr>
     <td align="center" width="33%">
-      <img src="docs/media/scenes/01-intro.png" alt="Scene 1 — Intro" width="100%" /><br/>
+      <img src="docs/media/scenes/en/01-intro.png" alt="Scene 1 — Intro" width="100%" /><br/>
       <sub><strong>1 · Intro</strong> — 5.0 s · logo, title, host chips, waveform pulse</sub>
     </td>
     <td align="center" width="33%">
-      <img src="docs/media/scenes/02-what.png" alt="Scene 2 — What is the skill" width="100%" /><br/>
+      <img src="docs/media/scenes/en/02-what.png" alt="Scene 2 — What is the skill" width="100%" /><br/>
       <sub><strong>2 · What is the skill</strong> — 9.0 s · 700+ media · 290+ LLMs · one CLI</sub>
     </td>
     <td align="center" width="33%">
-      <img src="docs/media/scenes/03-install.png" alt="Scene 3 — Install" width="100%" /><br/>
+      <img src="docs/media/scenes/en/03-install.png" alt="Scene 3 — Install" width="100%" /><br/>
       <sub><strong>3 · Install</strong> — 10.0 s · animated terminal + installer steps</sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="33%">
-      <img src="docs/media/scenes/04-hosts.png" alt="Scene 4 — Hosts" width="100%" /><br/>
+      <img src="docs/media/scenes/en/04-hosts.png" alt="Scene 4 — Hosts" width="100%" /><br/>
       <sub><strong>4 · Supported hosts</strong> — 8.0 s · grid of 7 hosts + SKILL.md paths</sub>
     </td>
     <td align="center" width="33%">
-      <img src="docs/media/scenes/05-cli.png" alt="Scene 5 — CLI" width="100%" /><br/>
+      <img src="docs/media/scenes/en/05-cli.png" alt="Scene 5 — CLI" width="100%" /><br/>
       <sub><strong>5 · CLI in action</strong> — 12.0 s · wavespeed-cli typing demo</sub>
     </td>
     <td align="center" width="33%">
-      <img src="docs/media/scenes/06-examples.png" alt="Scene 6 — Examples" width="100%" /><br/>
+      <img src="docs/media/scenes/en/06-examples.png" alt="Scene 6 — Examples" width="100%" /><br/>
       <sub><strong>6 · Examples</strong> — 10.0 s · image · video · LLM previews</sub>
     </td>
   </tr>
   <tr>
     <td align="center" colspan="3" width="100%">
-      <img src="docs/media/scenes/07-outro.png" alt="Scene 7 — Outro" width="60%" /><br/>
+      <img src="docs/media/scenes/en/07-outro.png" alt="Scene 7 — Outro" width="60%" /><br/>
       <sub><strong>7 · Outro / CTA</strong> — 6.0 s · one-line install + repo + license</sub>
     </td>
   </tr>
 </table>
 
-> Source code for the video lives in [`remotion-tutorial/`](remotion-tutorial/) — pure [Remotion](https://www.remotion.dev/) (TypeScript + React), no external assets. Re-render with `cd remotion-tutorial && npm install && npm run build`. Higher-resolution stills are in [`docs/media/scenes/`](docs/media/scenes/).
+> Source code for the video lives in [`remotion-tutorial/`](remotion-tutorial/) — pure [Remotion](https://www.remotion.dev/) (TypeScript + React), no external assets. Re-render with `cd remotion-tutorial && npm install && npm run build:en` (or `npm run build` for the Portuguese version embedded in [README.pt-BR.md](README.pt-BR.md)). Higher-resolution stills are in [`docs/media/scenes/en/`](docs/media/scenes/en/).
 
 ```bash
 # One-line install (interactive, picks the agents you have)

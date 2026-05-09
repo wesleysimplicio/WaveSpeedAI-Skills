@@ -10,6 +10,7 @@ import { SceneFrame } from '../components/SceneFrame';
 import { Logo } from '../components/Logo';
 import { Chip } from '../components/Chip';
 import { fonts, colors, gradients } from '../theme';
+import { useStrings } from '../i18n';
 
 const HOSTS = [
   { label: 'Claude', color: colors.violetSoft },
@@ -23,6 +24,7 @@ const HOSTS = [
 export const SceneIntro: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const t = useStrings().intro;
 
   const titleSpring = spring({
     frame: frame - 14,
@@ -41,7 +43,7 @@ export const SceneIntro: React.FC = () => {
   });
 
   return (
-    <SceneFrame accent="violet" particleSeed="intro" badge="01 · INTRO">
+    <SceneFrame accent="violet" particleSeed="intro" badge={t.badge}>
       <AbsoluteFill
         style={{
           alignItems: 'center',
@@ -82,7 +84,7 @@ export const SceneIntro: React.FC = () => {
             fontFamily: fonts.sans,
           }}
         >
-          Uma instalação. Todo agent. 700+ modelos de mídia e LLM em uma só CLI.
+          {t.subtitle}
         </h2>
         <div
           style={{

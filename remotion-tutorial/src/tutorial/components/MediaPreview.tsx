@@ -7,6 +7,7 @@ import {
   random,
 } from 'remotion';
 import { fonts, colors } from '../theme';
+import { useStrings } from '../i18n';
 
 type Variant = 'image' | 'video' | 'llm';
 
@@ -311,12 +312,10 @@ const Timecode: React.FC<{ frame: number }> = ({ frame }) => {
 };
 
 const LlmPreview: React.FC<{ frame: number }> = ({ frame }) => {
+  const chat = useStrings().examples.chat;
   const messages = [
-    { who: 'user', text: 'Resuma o WaveSpeedAI numa frase.' },
-    {
-      who: 'claude',
-      text: 'Plataforma única para imagem, vídeo, áudio e LLM em 700+ modelos.',
-    },
+    { who: 'user', text: chat.user },
+    { who: 'claude', text: chat.assistant },
   ];
   return (
     <div
